@@ -1,0 +1,36 @@
+@startuml
+
+class Main
+
+abstract Employee{
++ calculateSalary()
+}
+
+class MonthlyEmployee{
+- double salary
+
++ calculateSalary()
+}
+
+class HourlyEmployee{
+- double numberOfHours
+- double payPrHour
+
++ calculateSalary()
+}
+
+class CommissionEmployee{
+- double baseSalary
+- int salesAmount
+- double commissionPercentage
+
++ calculateSalary()
+}
+
+Main *- Employee
+
+Employee <|-- MonthlyEmployee : is
+Employee <|-- HourlyEmployee : is
+Employee <|-- CommissionEmployee : is
+
+@enduml
