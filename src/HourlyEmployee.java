@@ -20,7 +20,19 @@ public class HourlyEmployee extends Employee{
 
     @Override
     public String toString(){
+        String message = buildPaycheckDetails();
+        return message;
+    }
+
+    public String buildPaycheckDetails(){
         String salary = String.format("%.2f,-", calculateSalary()); // Display salary with two decimals
-        return super.name + ": " + salary;
+        String formattedPayPrHour = String.format("%.2f,-", this.payPrHour);
+
+        String message = this.name + "'s paycheck:" +
+                "\nStatus: Paid hourly" +
+                "\nHourly wage: " + formattedPayPrHour +
+                "\nClocked hours: " + this.numberOfHours +
+                "\nSalary: " + salary;
+        return message;
     }
 }

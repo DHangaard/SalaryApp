@@ -16,14 +16,38 @@ public class CommissionEmployee  extends Employee{
     // Methods
     @Override
     public double calculateSalary(){
-        double commission = this.salesAmount * this.commissionPercentage;
-        double salary = this.baseSalary + commission;
-        return salary;
+        return this.baseSalary + calculateCommission();
     }
 
     @Override
     public String toString(){
+        String message = buildPaycheckDetails();
+        return message;
+    }
+
+    public double calculateCommission(){
+        return this.salesAmount * this.commissionPercentage;
+    }
+
+    public int formatCommissionPercentage(){
+        double percentage = this.commissionPercentage * 100;
+        int formattedPercentage = (int) percentage;
+        return formattedPercentage;
+    }
+
+
+    public String buildPaycheckDetails(){
         String salary = String.format("%.2f,-", calculateSalary()); // Display salary with two decimals
-        return super.name + ": " + salary;
+        String formattedBaseSalary = String.format("%.2f,-", this.baseSalary);
+        String formattedSalesAmount = String.format("%.2f,-", this.salesAmount);
+        String formattedCommissionPercentage = formatCommissionPercentage() + "%";
+
+        String message = this.name + "'s paycheck:" +
+                "\nStatus: Paid by commission" +
+                "\nBase salary: " + formattedBaseSalary +
+                "\nSales amount: " + formattedSalesAmount +
+                "\nCommission percentage: " + formattedCommissionPercentage +
+                "\nSalary: " + salary;
+        return message;
     }
 }

@@ -7,27 +7,20 @@ public class Main {
 
         List<Employee> employees = new ArrayList<>();
 
-        // Instantiate employees
-        Employee monthly1 = new MonthlyEmployee("Adam", 5000.0);
-        Employee monthly2 = new MonthlyEmployee("Bruce", 7500.0);
+        // Instantiate employees and add to list
+        employees.add(new MonthlyEmployee("Anders", 5000.0));
+        employees.add(new MonthlyEmployee("Birgitte", 7500.0));
 
-        Employee hourly1 = new HourlyEmployee("Charles", 37.0, 150.0);
-        Employee hourly2 = new HourlyEmployee("Diane", 40.5, 135.0);
+        employees.add(new HourlyEmployee("Christian", 37.0, 150.0));
+        employees.add(new HourlyEmployee("Dorthe", 40.5, 135.0));
 
-        Employee commission1 = new CommissionEmployee("Emma", 20000.0, 10000.0, 0.20);
-        Employee commission2 = new CommissionEmployee("Fitzgerald", 100000.0, 50000.0, 0.50);
-
-        // Add to list
-        employees.add(monthly1);
-        employees.add(monthly2);
-        employees.add(hourly1);
-        employees.add(hourly2);
-        employees.add(commission1);
-        employees.add(commission2);
+        employees.add(new CommissionEmployee("Erik", 20000.0, 10000.0, 0.20));
+        employees.add(new CommissionEmployee("Freja", 100000.0, 50000.0, 0.50));
 
         // Display list
         for (Employee e : employees){
             System.out.println(e);
+            System.out.println(); // Empty line
         }
     }
 }

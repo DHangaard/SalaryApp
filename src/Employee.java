@@ -8,4 +8,7 @@ public abstract class Employee {
 
     // Methods
     abstract double calculateSalary();
+
 }
+
+
