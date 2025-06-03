@@ -1,19 +1,23 @@
 public class MonthlyEmployee extends Employee{
 
-    // Attributes
+    // ---------- Attributes ----------
     private double salary;
 
-    // Constructor
+
+    // ---------- Constructor ----------
     MonthlyEmployee(String name, double salary){
+        super.status = "Paid monthly";
         super.name = name;
         this.salary = salary;
     }
 
-    // Methods
+
+    // ---------- Methods ----------
     @Override
     public double calculateSalary(){
         return salary;
     }
+
 
     @Override
     public String toString(){
@@ -21,12 +25,15 @@ public class MonthlyEmployee extends Employee{
         return message;
     }
 
-    public String buildPaycheckDetails(){
+
+    @Override
+    protected String buildPaycheckDetails(){
         String salary = String.format("%.2f,-", calculateSalary()); // Display salary with two decimals
 
         String message = this.name + "'s paycheck:" +
-                        "\nStatus: Paid monthly" +
+                        "\nStatus: " + super.status +
                         "\nSalary: " + salary;
+
         return message;
     }
 }

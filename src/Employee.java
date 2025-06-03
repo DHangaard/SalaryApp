@@ -1,13 +1,14 @@
 public abstract class Employee {
 
-    // Attributes
-    String name;
-    // TODO Employee ID
+    // ---------- Attributes ----------
+    protected String status;
+    protected String name;
 
-    // Constructor
 
-    // Methods
+    // ---------- Methods ----------
     abstract double calculateSalary();
+
+    protected abstract String buildPaycheckDetails();
 
 }
 

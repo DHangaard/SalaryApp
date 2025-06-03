@@ -3,13 +3,18 @@
 class Main
 
 abstract Employee{
+# String name
+# String status
+
 + calculateSalary()
+# String buildPaycheckDetails()
 }
 
 class MonthlyEmployee{
 - double salary
 
 + calculateSalary()
+# buildPaycheckDetails()
 }
 
 class HourlyEmployee{
@@ -17,14 +22,18 @@ class HourlyEmployee{
 - double payPrHour
 
 + calculateSalary()
+# buildPaycheckDetails()
 }
 
 class CommissionEmployee{
 - double baseSalary
-- int salesAmount
+- double salesAmount
 - double commissionPercentage
 
 + calculateSalary()
+- calculateCommission()
+- formatCommissionPercentage()
+# buildPaycheckDetails()
 }
 
 Main *- Employee
